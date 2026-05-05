@@ -1,0 +1,942 @@
+/* Estilos generales del body - fondo negro base */
+body {
+    background-color: #000000;
+    background-image: none;
+    min-height: 100vh;
+    transition: filter 0.5s ease;
+}
+
+/* Degradado superior: crea una capa superpuesta desde arriba */
+body::before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    background: linear-gradient(to bottom, #010e30 0%, #000a24 30%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+    content: '';
+}
+
+/* Degradado inferior: crea una capa superpuesta desde abajo */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(to top, #010e30 0%, #000a24 10%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Estilos del título principal h1 */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 64px;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 0 auto;
+    padding-top: 3%;
+    padding-bottom: 15px;
+    position: relative;
+    z-index: 10;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Línea decorativa debajo del título */
+h1::after {
+    content: '';
+    display: block;
+    width: 200px;
+    margin: 10px auto 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Animación de entrada fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contenedor que agrupa las 3 imágenes en fila horizontal */
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 10%;
+    margin: 0 auto;
+}
+
+/* Estilos base de los contenedores (imágenes clicables) */
+.container {
+    background-color: #001696;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+    width: 200px;
+    height: 200px;
+    padding: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Estilos generales del body - fondo negro base */
+body {
+    background-color: #000000;
+    background-image: none;
+    min-height: 100vh;
+    transition: filter 0.5s ease;
+}
+
+/* Degradado superior: crea una capa superpuesta desde arriba */
+body::before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    background: linear-gradient(to bottom, #010e30 0%, #000a24 30%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+    content: '';
+}
+
+/* Degradado inferior: crea una capa superpuesta desde abajo */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(to top, #010e30 0%, #000a24 10%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Estilos del título principal h1 */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 64px;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 0 auto;
+    padding-top: 3%;
+    padding-bottom: 15px;
+    position: relative;
+    z-index: 10;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Línea decorativa debajo del título */
+h1::after {
+    content: '';
+    display: block;
+    width: 200px;
+    margin: 10px auto 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Animación de entrada fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contenedor que agrupa las 3 imágenes en fila horizontal */
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 10%;
+    margin: 0 auto;
+}
+
+/* Estilos base de los contenedores (imágenes clicables) */
+.container {
+    background-color: #001696;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+    width: 200px;
+    height: 200px;
+    padding: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Imágenes de fondo para cada contenedor */
+.container-1 {
+    background-image: url('WhatsApp Image 2026-04-07 at 10.24.59.jpeg');
+    transform: rotate(270deg);
+}
+
+.container-2 {
+    background-image: url('WhatsApp Image 2026-04-07 at 10.24.59 (1).jpeg');
+    transform: rotate(270deg);
+}
+
+.container-3 {
+    background-image: url('WhatsApp Image 2026-04-07 at 10.43.26.jpeg');
+    transform: rotate(270deg);
+}
+
+/* Efecto hover: aumenta tamaño y sombra al pasar el mouse */
+.container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+    background-color: #0028CC;
+}
+
+/* Etiqueta "Abreme" que aparece al hacer hover */
+.touch-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Mostrar etiqueta al hacer hover en el contenedor */
+.container:hover .touch-label {
+    opacity: 1;
+    bottom: 30px;
+}
+
+/* Contenedor principal del modal (oculto por defecto) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cuando el modal tiene la clase 'show', se hace visible */
+.modal.show {
+    display: flex;
+}
+
+/* Contenido del modal (cuadro con texto) */
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+}
+
+/* Botón X para cerrar el modal */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Efecto hover en el botón de cerrar */
+.close:hover {
+    color: #ccc;
+}
+
+/* Panel lateral izquierdo con mensaje romántico */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 210px;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0, 7, 30, 0.95), rgba(0, 0, 0, 0.8));
+    padding: 30px 20px;
+    z-index: 100;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Título dentro del sidebar */
+.sidebar h2 {
+    color: white;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Párrafo dentro del sidebar */
+.sidebar p {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Georgia', serif;
+    font-size: 15px;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* Contenedor de mensajes centrales */
+.center-messages {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px 60px 20px;
+    z-index: 10;
+}
+
+/* Títulos de los mensajes */
+.center-messages h2 {
+    color: #ffffff;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Texto de los mensajes */
+.center-messages p {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    line-height: 1.8;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+/* Palabras resaltadas en rosa */
+.amor-span, .LPDD {
+    color: #ff69b4;
+    font-weight: bold;
+    font-size: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Botón para ir a la segunda página */
+.btn-seccion {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, rgba(26, 58, 138, 0.7), rgba(13, 31, 78, 0.7));
+    color: white;
+    text-decoration: none;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto hover en el botón */
+.btn-seccion:hover {
+    background: linear-gradient(135deg, rgba(42, 74, 170, 0.8), rgba(29, 47, 94, 0.8));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(26, 58, 138, 0.4);
+}
+
+/* Dedicatoria en la esquina inferior derecha */
+.bottom-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: right;
+    z-index: 10;
+}
+
+.bottom-right h2 {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bottom-right p {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    font-style: italic;
+    margin: 5px 0 0 0;
+}
+
+/* Ajustes para tablets (menos de 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .container-wrapper {
+        gap: 50px;
+    }
+    
+    h1 {
+        font-size: 48px;
+    }
+}
+
+/* Ajustes para móviles (menos de 768px) */
+@media (max-width: 768px) {
+    /* Sidebar se muestra arriba del contenido */
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .sidebar h2 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    
+    .sidebar p {
+        font-size: 14px;
+    }
+    
+    /* Título más pequeño en móvil */
+    h1 {
+        font-size: 32px;
+        letter-spacing: 2px;
+        padding-top: 20px;
+    }
+    
+    /* Contenedores se apilan verticalmente */
+    .container-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding-top: 30px;
+    }
+    
+    .container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    /* Modal más pequeño en móvil */
+    .modal-content {
+        padding: 20px;
+        width: 90%;
+    }
+    
+    .close {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+    }
+}
+    position: fixed;  /* Posición fija en la pantalla */
+    top: 0;  /* Desde arriba */
+    left: 0;  /* Desde la izquierda */
+    width: 100%;  /* Ancho completo */
+    height: 100%;  /* Alto completo */
+    background-color: rgba(0, 0, 0, 0.4);  /* Fondo semitransparente negro (40%) */
+    z-index: 1000;  /* Se muestra por encima de todo */
+    justify-content: center;  /* Centra el contenido horizontalmente */
+    align-items: center;  /* Centra el contenido verticalmente */
+}
+
+/* 
+    ========================================
+    MODAL VISIBLE
+    ========================================
+    Cuando el modal tiene la clase 'show', se muestra con flexbox.
+    Esta clase se agrega con JavaScript.
+*/
+.modal.show {
+    display: flex;  /* Se muestra usando flexbox */
+}
+
+/* 
+    ========================================
+    CONTENIDO DEL MODAL (modal-content)
+    ========================================
+    El cuadro blanco/gris que contiene el texto del modal.
+*/
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.6);  /* Fondo más oscuro (60%) */
+    backdrop-filter: blur(10px);  /* Efecto de desenfoque detrás del modal */
+    padding: 40px;  /* Relleno interno */
+    border-radius: 10px;  /* Bordes redondeados */
+    border: 1px solid rgba(255, 255, 255, 0.2);  /* Borde sutil blanco */
+    color: white;  /* Texto blanco */
+    text-align: center;  /* Texto centrado */
+    max-width: 500px;  /* Ancho máximo */
+    width: 80%;  /* Ancho del 80% en pantallas pequeñas */
+}
+
+/* 
+    ========================================
+    BOTÓN DE CERRAR (X)
+    ========================================
+    La X en la esquina superior derecha del modal.
+*/
+.close {
+    position: absolute;  /* Posición absoluta */
+    top: 20px;  /* Desde arriba */
+    right: 30px;  /* Desde la derecha */
+    font-size: 40px;  /* Tamaño grande de la X */
+    color: white;  /* Color blanco */
+    cursor: pointer;  /* Cursor de mano */
+}
+
+/* 
+    ========================================
+    EFECTO HOVER EN BOTÓN CERRAR
+    ========================================
+    Cambia el color cuando el usuario pasa el mouse sobre la X.
+*/
+.close:hover {
+    color: #ccc;  /* Color gris al pasar el mouse */
+}
+
+/* 
+    ========================================
+    BARRA LATERAL (sidebar)
+    ========================================
+    Panel lateral izquierdo con mensaje romántico.
+    Se mantiene fijo al hacer scroll (position: fixed).
+    
+    Características:
+    - width: 210px = ancho fijo
+    - height: 100vh = altura completa de la ventana
+    - background: degradado azul oscuro a negro
+    - z-index: 100 = por encima del contenido principal
+    - border-right: línea sutil en el borde derecho
+*/
+.sidebar {
+    position: fixed;  /* Permanece fijo al hacer scroll */
+    left: 0;  /* Lado izquierdo de la pantalla */
+    top: 0;
+    width: 210px;  /* Ancho de la barra lateral */
+    height: 100vh;  /* Altura completa de la ventana */
+    background: linear-gradient(to right, rgba(0, 7, 30, 0.95), rgba(0, 0, 0, 0.8));
+    /* Degradado: azul oscuro -> negro */
+    padding: 30px 20px;  /* Relleno interno */
+    z-index: 100;  /* Por encima del contenido principal */
+    border-right: 1px solid rgba(255, 255, 255, 0.1);  /* Borde sutil derecho */
+}
+
+/* 
+    ========================================
+    TÍTULO DENTRO DEL SIDEBAR
+    ========================================
+*/
+.sidebar h2 {
+    color: white;  /* Texto blanco */
+    font-family: 'Playfair Display', 'Georgia', serif;  /* Fuentes elegantes */
+    font-size: 24px;  /* Tamaño de fuente */
+    font-weight: 400;  /* Peso normal */
+    letter-spacing: 3px;  /* Espaciado entre letras */
+    text-transform: uppercase;  /* Mayúsculas */
+    margin-top: 40px;  /* Margen superior */
+    margin-bottom: 30px;  /* Margen inferior */
+    padding-bottom: 15px;  /* Relleno inferior para la línea */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);  /* Línea decorativa */
+    text-align: center;  /* Texto centrado */
+}
+
+/* 
+    ========================================
+    PÁRRAFO DENTRO DEL SIDEBAR
+    ========================================
+*/
+.sidebar p {
+    color: rgba(255, 255, 255, 0.85);  /* Blanco con 85% opacidad */
+    font-family: 'Georgia', serif;  /* Fuente serif */
+    font-size: 15px;  /* Tamaño de fuente */
+    line-height: 1.8;  /* Altura de línea para mejor lectura */
+    font-style: italic;  /* Texto en cursiva */
+}
+
+/* 
+    ========================================
+    DISEÑO RESPONSIVO (MEDIA QUERIES)
+    ========================================
+    Estos estilos se aplican solo cuando la pantalla es más pequeña que el tamaño especificado.
+    Esto hace que la página se adapte a móviles y tablets.
+*/
+
+/* 
+    ========================================
+    TABLET (menos de 1024px)
+    ========================================
+*/
+@media (max-width: 1024px) {
+    /* Reducir el tamaño de los contenedores */
+    .container {
+        width: 150px;
+        height: 150px;
+    }
+    
+    /* Reducir el espacio entre contenedores */
+    .container-wrapper {
+        gap: 50px;
+    }
+    
+    /* Hacer el título más pequeño */
+    h1 {
+        font-size: 48px;
+    }
+}
+
+/* 
+    ========================================
+    MÓVIL (menos de 768px)
+    ========================================
+*/
+@media (max-width: 768px) {
+    /* 
+        ========================================
+        SIDEBAR EN MÓVIL
+        ========================================
+        En móvil, el sidebar se muestra arriba del contenido
+    */
+    .sidebar {
+        position: relative;  /* Ya no es fijo, fluye con el contenido */
+        width: 100%;  /* Ocupa todo el ancho */
+        height: auto;  /* Altura automática */
+        padding: 20px;
+        box-sizing: border-box;  /* Incluye el padding en el ancho */
+    }
+    
+    /* Reducir tamaño del título del sidebar */
+    .sidebar h2 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    
+    /* Reducir tamaño del texto del sidebar */
+    .sidebar p {
+        font-size: 14px;
+    }
+    
+    /* 
+        ========================================
+        TÍTULO PRINCIPAL EN MÓVIL
+        ========================================
+    */
+    h1 {
+        font-size: 32px;  /* Título más pequeño */
+        letter-spacing: 2px;
+        padding-top: 20px;
+    }
+    
+    /* 
+        ========================================
+        CONTENEDORES EN MÓVIL
+        ========================================
+        En móvil, los contenedores se apilan verticalmente
+    */
+    .container-wrapper {
+        display: flex;
+        flex-direction: column;  /* Apila los contenedores verticalmente */
+        align-items: center;  /* Centra los contenedores */
+        gap: 30px;  /* Espacio vertical entre contenedores */
+        padding-top: 30px;
+    }
+    
+    /* 
+        ========================================
+        CONTENEDORES INDIVIDUALES EN MÓVIL
+        ========================================
+    */
+    .container {
+        width: 200px;  /* Ancho más grande para mejor visualización */
+        height: 200px;
+    }
+    
+    /* 
+        ========================================
+        MODAL EN MÓVIL
+        ========================================
+    */
+    .modal-content {
+        padding: 20px;
+        width: 90%;  /* Ocupa el 90% del ancho */
+    }
+    
+    .close {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+    }
+}
+
+/* 
+    ========================================
+    CONTENIDO EXTRA EN EL FONDO (bottom-content)
+    ========================================
+    Esta sección aparece cuando se hace scroll hacia abajo.
+*/
+.bottom-content {
+    min-height: 100vh;  /* Altura mínima igual a la pantalla */
+    padding: 60px 20px;  /* Espaciado interno */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 7, 30, 0.95));
+    /* Degradado que conecta con el fondo principal */
+    display: flex;
+    flex-direction: column;  /* Secciones apiladas verticalmente */
+    align-items: center;  /* Centrado horizontal */
+    gap: 60px;  /* Espacio entre secciones */
+}
+
+/* 
+    ========================================
+    CADA SECCIÓN DEL CONTENIDO INFERIOR
+    ========================================
+*/
+.bottom-section {
+    max-width: 600px;  /* Ancho máximo del texto */
+    text-align: center;  /* Texto centrado */
+}
+
+.bottom-section h2 {
+    color: #ffffff;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+    display: inline-block;
+}
+
+.bottom-section p {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* 
+    ========================================
+    DISEÑO RESPONSIVO PARA EL CONTENIDO INFERIOR
+    ========================================
+*/
+@media (max-width: 768px) {
+    .bottom-content {
+        padding: 40px 20px;
+        gap: 40px;
+    }
+    
+    .bottom-section h2 {
+        font-size: 24px;
+    }
+    
+    .bottom-section p {
+        font-size: 16px;
+    }
+}
+
+/* 
+    ========================================
+    BOTÓN PARA IR A LA SEGUNDA SECCIÓN
+    ========================================
+*/
+.btn-seccion {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, rgba(26, 58, 138, 0.7), rgba(13, 31, 78, 0.7));
+    color: white;
+    text-decoration: none;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-seccion:hover {
+    background: linear-gradient(135deg, rgba(42, 74, 170, 0.8), rgba(29, 47, 94, 0.8));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(26, 58, 138, 0.4);
+}
+
+/* 
+    ========================================
+    MENSAJES CENTRALES (center-messages)
+    ========================================
+    Mensajes debajo de los contenedores
+*/
+.center-messages {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px 60px 20px;
+    z-index: 10;
+}
+
+.center-messages h2 {
+    color: #ffffff;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.center-messages p {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    line-height: 1.8;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+.amor-span {
+    color: #ff69b4;  /* Color rosa brillante para resaltar la palabra "amor" */
+    font-weight: bold;
+    font-size: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.Agradezco-A-Dios {
+    color: #ffffff;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    box-shadow: #010e30 0px 2px 10px;
+}
+.mis-sueños {
+    color: #ffffff;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    box-shadow: #010e30 0px 2px 10px;
+}
+.mi-promesa {
+    color: #ffffff;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    box-shadow: #010e30 0px 2px 10px;
+}
+.LPDD {
+    color: #ff69b4;  /* Color rosa brillante para resaltar "la presencia de Dios" */
+    font-weight: bold;
+    font-size: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 
+    ========================================
+    DEDICATORIA ESQUINA INFERIOR DERECHA
+    ========================================
+*/
+.bottom-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: right;
+    z-index: 10;
+}
+
+.bottom-right h2 {
+    color: rgba(255, 255, 255, 0.7); /* Color blanco semitransparente para el título */
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bottom-right p {
+    color: rgba(255, 255, 255, 0.7); /* Color blanco semitransparente para el nombre */
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    font-style: italic;
+    margin: 5px 0 0 0;
+}

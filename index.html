@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- Primera página del sitio web romántico -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">  <!-- Codificación de caracteres -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Diseño responsivo -->
+        <title>For My Love</title>  <!-- Título en la pestaña del navegador -->
+        <link rel="stylesheet" href="style.css">  <!-- Archivo de estilos -->
+        <meta name="description" content="Un sitio web romántico dedicado a mi amada Fernanda, con mensajes de amor, promesas y agradecimientos a Dios por nuestro amor.">
+        <meta name="robots" content="nosnippet">
+    </head>
+    
+    <body>        
+        <!-- Título principal de la página -->
+        <h1 class="h1">El comienzo de nuestra historia</h1>
+        
+        <!-- Contenedor que agrupa las 3 imágenes -->
+        <div class="container-wrapper">
+        
+            <!-- Contenedor 1: Al hacer clic abre el modal con mensaje 1 -->
+            <div class="container container-1" onclick="openModal(1)">
+                <span class="touch-label">Abreme</span>
+            </div>
+            
+            <!-- Contenedor 2: Al hacer clic abre el modal con mensaje 2 -->
+            <div class="container container-2" onclick="openModal(2)">
+                <span class="touch-label">Abreme</span>
+            </div>
+            
+            <!-- Contenedor 3: Al hacer clic abre el modal con mensaje 3 -->
+            <div class="container container-3" onclick="openModal(3)">
+                <span class="touch-label">Abreme</span>
+            </div>
+            
+        </div>
+
+        <!-- Mensajes centrales de la página -->
+        <div class="center-messages">
+            <h2 class="Agradezco-A-Dios">Agradezco a Dios</h2>
+            <p>Agradezco a Dios por ti, por que me ha dado el regalo más precioso; tu <span class="amor-span">amor</span>.   .</p>
+            
+            <h2 class="mis-sueños">Mis Sueños</h2>
+            <p>Sueño con construir un futuro juntos, lleno de amor y felicidad. Donde la receta de la felicidad sea <span class="LPDD">la presencia de Dios</span> en nuestra vida y nuestro hogar.</p>
+            
+            <h2 class="mi-promesa">Mi Promesa</h2>
+            <p>Te amaré siempre, en cada momento de nuestra vida. Amando con todo mi corazón, con ternura, admiracion y sacrifcio hacia la mujer que Dios ha elegido para mí. <span class="amor-span">Te amo Maria Fernanda Arocha Mejias</span></p>
+            
+            <!-- Botón para ir a la segunda página -->
+            <a href="pagina2.html" class="btn-seccion">Siguiente</a>
+        </div>
+
+        <!-- Barra lateral fija con mensaje romántico -->
+        <div class="sidebar">
+            <h2>Para Fernanda:</h2>
+            <p>Mi amor, quiero decirte que...</p>
+            <p>Te amo más con cada día que pasa. Desde el primer día que hablamos, todo cambió desde el minuto uno.
+Fue como cuando algo hace click en tu mente y sabes que es diferente, genuino y especial; algo que no se puede explicar con palabras, solo se siente.
+Y eso es lo que siento por ti: un amor tan puro y sincero que me llena el corazón de alegría y gratitud por tenerte en mi vida.
+Eres mi compañera, mi amiga, mi confidente y mi amor eterno.
+Gracias por ser tú, por compartir tu vida conmigo y por hacerme sentir amado cada día.
+Te amo con todo mi corazón. Feliz cumpleaños mi amor.</p>
+        </div>
+
+        <!-- Dedicatoria en la esquina inferior derecha -->
+        <div class="bottom-right">
+            <h2>Con todo mi amor</h2>
+            <p>Justin</p>
+        </div>
+
+        <!-- Modal: ventana emergente que se muestra al hacer clic en los contenedores -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>  <!-- Botón X para cerrar -->
+                <h2 id="modal-title"></h2>  <!-- Título dinámico del modal -->
+                <p id="modal-text"></p>  <!-- Contenido dinámico del modal -->
+            </div>
+        </div>
+
+        <!-- JavaScript: funciones interactivas de la página -->
+        <script>
+            // Función para abrir el modal con contenido diferente según el número
+            function openModal(num) {
+                const modal = document.getElementById('modal');
+                const title = document.getElementById('modal-title');
+                const text = document.getElementById('modal-text');
+                
+                // Contenido para cada contenedor
+                if (num === 1) {
+                    title.textContent = '(Cantares 2:2-3)';
+                    text.textContent = 'como lirios entre los espinos, es mi amada entre las doncellas...';
+                } else if (num === 2) {
+                    title.textContent = '(1 CORINTIOS 13:4-5)';
+                    text.textContent = 'El amor es paciente, es bondadoso. El amor no es envidioso ni jactancioso, no se comporta con arrogancia, no busca su propio interés, no se irrita ni guarda rencor.';
+                } else if (num === 3) {
+                    title.textContent = 'Tu proposito en Dios';
+                    text.textContent = 'Mi amor, te animo a seguir adelante con fe y confianza en Dios, sabiendo que Él te guía en todo momento. Usa tus dones y talentos para glorificar a Dios y servir a los demás, y recuerda que tu propósito en la vida es vivir para agradar a Dios y cumplir su voluntad para tu vida.';
+                }
+                
+                modal.classList.add('show');
+            }
+
+            // Función para cerrar el modal
+            function closeModal() {
+                document.getElementById('modal').classList.remove('show');
+            }
+
+            // Cerrar modal al hacer clic fuera del contenido
+            document.getElementById('modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+
+            // Mantener el fondo oscuro al hacer scroll
+            window.addEventListener('scroll', function() {
+                document.body.style.backgroundImage = "none";
+                document.body.style.backgroundColor = "#000000";
+            });
+        </script>
+    </body>
+</html>

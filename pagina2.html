@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- Segunda página del sitio web romántico -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">  <!-- Codificación de caracteres -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Diseño responsivo -->
+        <title>Para Fernanda - Continuación</title>
+        <link rel="stylesheet" href="style2.css">  <!-- Archivo de estilos diferente -->
+    </head>
+    
+    <body>
+        <!-- Contenedor principal de la segunda página -->
+        <main class="seccion2">
+            <h1>Asi empezo nuestra historia</h1>
+            <p>El comienzo de nuestra historia de amor juntos...</p>
+        
+        <!-- Primer grupo de 3 contenedores -->
+        <div class="container-wrapper">
+            <button class="container container-1" type="button" onclick="openModal(1)" aria-label="Abrir historia 1">
+                <span class="touch-label">Abreme</span>
+            </button>
+            
+            <button class="container container-2" type="button" onclick="openModal(2)" aria-label="Abrir historia 2">
+                <span class="touch-label">Abreme</span>
+            </button>
+            
+            <button class="container container-3" type="button" onclick="openModal(3)" aria-label="Abrir historia 3">
+                <span class="touch-label">Abreme</span>
+            </button>
+            
+        </div>
+
+        <!-- Segundo grupo de 3 contenedores (4-6) -->
+        <div class="container-wrapper-2">
+            <button class="container container-4" type="button" onclick="openModal(4)" aria-label="Abrir historia 4">
+                <span class="touch-label">Abreme</span>
+            </button>
+            
+            <button class="container container-5" type="button" onclick="openModal(5)" aria-label="Abrir historia 5">
+                <span class="touch-label">Abreme</span>
+            </button>
+            
+            <button class="container container-6" type="button" onclick="openModal(6)" aria-label="Abrir historia 6">
+                <span class="touch-label">Abreme</span>
+            </button>
+        </div>
+
+        <!-- Mensaje de amor final -->
+        <p class="texto-amor">Te amo, Maria Fernanda Arocha Mejias.</p>
+
+        <!-- Botón para volver a la página principal -->
+        <a href="index.html" class="btn-seccion btn-volver">Volver</a>
+        
+        <!-- Botón que muestra un mensaje temporal -->
+        <button class="btn-seccion btn-siguiente" onclick="mostrarMensaje()">Siguiente</button>
+        
+        <!-- Bubble de mensaje (oculto por defecto) -->
+        <div id="mensaje-bubble" class="mensaje-bubble">
+            Aún no ha salido más contenido sobre nuestra historia de amor
+        </div>
+        </main>
+
+        <!-- Modal: ventana emergente -->
+        <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-text">
+            <div class="modal-content">
+                <button class="close" type="button" onclick="closeModal()" aria-label="Cerrar modal">&times;</button>
+                <h2 id="modal-title"></h2>
+                <p id="modal-text"></p>
+            </div>
+        </div>
+
+        <!-- JavaScript: funciones interactivas -->
+        <script>
+            // Muestra el bubble de mensaje temporalmente
+            function mostrarMensaje() {
+                var bubble = document.getElementById('mensaje-bubble');
+                bubble.style.display = 'block';
+                
+                // Ocultar después de 3 segundos
+                setTimeout(function() {
+                    bubble.style.display = 'none';
+                }, 3000);
+            }
+
+            // Función para abrir el modal con 6 contenidos diferentes
+            function openModal(num) {
+                const modal = document.getElementById('modal');
+                const title = document.getElementById('modal-title');
+                const text = document.getElementById('modal-text');
+                
+                if (num === 1) {
+                    title.textContent = 'El Primer Dia:';
+                    text.textContent = 'Este es el primer dia, el dia que empezamos a hablar, el dia que cambio todo pera mi.';
+                } else if (num === 2) {
+                    title.textContent = 'Nuestra rutinas:';
+                    text.textContent = 'Estos dias, en las fechas de esta foto, fueron los dias donde empezamos a crear rutinas y momentos hermosos juntos.';
+                } else if (num === 3) {
+                    title.textContent = 'Primeras flores:';
+                    text.textContent = 'Estas son las primeras flores que te regalé, símbolo de mi amor por ti. Lirios que representan la belleza y pureza de nuestro amor, creciendo juntos en el señor a pesar de las dificultades.';
+                } else if (num === 4) {
+                    title.textContent = 'El dia en que nos hicimos pareja: ( 01/01/2026 )';
+                    text.textContent = 'Este es el dia en que nos hicimos pareja, el principio del primer dia del resto de nuestras vidas juntos.';
+                } else if (num === 5) {
+                    title.textContent = 'Nuestra primera foto decente jajajaja:';
+                    text.textContent = 'no hay mucho que decir, pero ambos sabemos que esta foto es muy especial para los dos.';
+                } else if (num === 6) {
+                    title.textContent = 'Nuestra adoracion a Dios:';
+                    text.textContent = 'Por mas momentos asi, si no son para momentos como este nada tendria sentido. mi mayor anhelo contigo es poder celebrar nuestra de en nuestro señor Jesucristo juntos.';
+                }
+                
+                modal.classList.add('show');
+            }
+
+            // Función para cerrar el modal
+            function closeModal() {
+                document.getElementById('modal').classList.remove('show');
+            }
+
+            // Cerrar modal al hacer clic fuera del contenido
+            document.getElementById('modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+        </script>
+    </body>
+</html>

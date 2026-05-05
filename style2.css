@@ -1,0 +1,1092 @@
+/* ========================================
+   ESTILOS GENERALES
+   ======================================== */
+
+/* Fondo negro base de la página */
+body {
+    background-color: #000000;
+    background-image: none;
+    min-height: 100vh;
+    transition: filter 0.5s ease;
+}
+
+/* Degradado superior: crea efecto visual desde arriba */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45vh;
+    background: linear-gradient(to bottom, rgba(1, 14, 48, 0.4) 0%, rgba(0, 10, 36, 0.2) 40%, transparent 80%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Degradado inferior: crea efecto visual desde abajo */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(to top, rgba(1, 14, 48, 0.4) 0%, rgba(0, 10, 36, 0.2) 20%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ========================================
+   SECCIÓN PRINCIPAL
+   ======================================== */
+
+/* Contenedor principal de la segunda página */
+.seccion2 {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 10;
+}
+
+/* Título de la sección */
+.seccion2 h1 {
+    color: #ffffff;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 5px auto 5px;
+    position: relative;
+    z-index: 10;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out;
+    text-align: center;
+}
+
+/* Línea decorativa debajo del título */
+.seccion2 h1::after {
+    content: '';
+    display: block;
+    width: 200px;
+    margin: 10px auto 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Párrafo introductorio */
+.seccion2 p {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 600px;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* ========================================
+   TÍTULOS Y MENSAJES
+   ======================================== */
+
+/* Título de sección secundario */
+.titulo-seccion {
+    color: #ffffff;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 30px auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+/* Mensaje de amor en rosa */
+.texto-amor {
+    color: #ff69b4;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 40px auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Animación de entrada fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   BOTONES DE NAVEGACIÓN
+   ======================================== */
+
+/* Estilos base de los botones */
+.btn-seccion {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(135deg, rgba(26, 58, 138, 0.7), rgba(13, 31, 78, 0.7));
+    color: white;
+    text-decoration: none;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 14px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Botón Volver posicionado a la izquierda */
+.btn-volver {
+    position: fixed;
+    bottom: 40px;
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+/* Botón Siguiente posicionado a la derecha */
+.btn-siguiente {
+    position: fixed;
+    bottom: 40px;
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+/* Efecto hover en los botones */
+.btn-seccion:hover {
+    background: linear-gradient(135deg, #2a4aaa, #1d2f5e);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(26, 58, 138, 0.4);
+}
+
+/* Bubble de mensaje temporal */
+.mensaje-bubble {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    left: 70%;
+    transform: translateX(-50%);
+    background: rgba(255, 105, 180, 0.9);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    z-index: 100;
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Flecha del bubble */
+.mensaje-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: rgba(255, 105, 180, 0.9) transparent transparent;
+}
+
+/* ========================================
+   CONTENEDORES DE IMÁGENES
+   ======================================== */
+
+/* Primer grupo de contenedores (1-3) */
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 20px;
+    margin: 0 auto;
+    z-index: 10;
+    position: relative;
+}
+
+/* Segundo grupo de contenedores (4-6) */
+.container-wrapper-2 {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    z-index: 10;
+    position: relative;
+}
+
+/* Estilos base de los contenedores */
+.container {
+    background-color: #001696;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+    width: 200px;
+    height: 200px;
+    padding: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Imágenes de fondo para cada contenedor */
+.container-1 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13.jpeg');
+    transform: rotate(270deg);
+}
+
+.container-2 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13 (1).jpeg');
+    transform: rotate(360deg);
+}
+
+.container-3 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13 (2).jpeg');
+    transform: rotate(270deg);
+}
+
+.container-4 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13 (3).jpeg');
+    transform: rotate(360deg);
+}
+
+.container-5 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13 (4).jpeg');
+    transform: rotate(270deg);
+}
+
+.container-6 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.07.21.jpeg');
+    transform: rotate(360deg);
+}
+
+/* Efecto hover: aumenta tamaño y sombra */
+.container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+    background-color: #0028CC;
+}
+
+/* Etiqueta "Abreme" que aparece al hacer hover */
+.touch-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Mostrar etiqueta al hacer hover */
+.container:hover .touch-label {
+    opacity: 1;
+    bottom: 30px;
+}
+
+/* ========================================
+   MODAL (VENTANA EMERGENTE)
+   ======================================== */
+
+/* Contenedor principal del modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal visible */
+.modal.show {
+    display: flex;
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+    position: relative;
+}
+
+/* Botón X para cerrar */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 34px;
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Efecto hover en el botón de cerrar */
+.close:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.18);
+    transform: scale(1.05);
+}
+
+/* ========================================
+    DISEÑO RESPONSIVO
+   ======================================== */
+
+/* Ajustes para móviles */
+@media (max-width: 1024px) {
+    .seccion2 {
+        padding: 40px 16px;
+    }
+
+    .seccion2 h1 {
+        font-size: 34px;
+        letter-spacing: 2px;
+    }
+    
+    .seccion2 p {
+        font-size: 16px;
+        padding: 0 16px;
+        max-width: 100%;
+    }
+    
+    .btn-seccion {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
+}
+
+/* Layout adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container-wrapper,
+    .container-wrapper-2 {
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );
+        gap: 18px;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 320px;
+        min-height: 240px;
+        padding: 24px;
+    }
+
+    .touch-label {
+        opacity: 1;
+        bottom: 18px;
+    }
+
+    .btn-volver,
+    .btn-siguiente {
+        position: fixed;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(90%, 320px);
+        margin: 0 auto;
+        display: block;
+    }
+
+    .btn-siguiente {
+        bottom: 80px;
+    }
+
+    .mensaje-bubble {
+        left: 50%;
+        bottom: 130px;
+        transform: translateX(-50%);
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 540px) {
+    .seccion2 h1 {
+        font-size: 28px;
+    }
+
+    .texto-amor {
+        font-size: 22px;
+        margin: 30px auto;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button.container {
+    border: none;
+    background-color: transparent;
+    font: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.btn-seccion {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(135deg, rgba(26, 58, 138, 0.7), rgba(13, 31, 78, 0.7));
+    color: white;
+    text-decoration: none;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 14px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.btn-volver {
+    position: fixed;
+    bottom: 40px;
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+.btn-siguiente {
+    position: fixed;
+    bottom: 40px;
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+.btn-seccion:hover {
+    background: linear-gradient(135deg, #2a4aaa, #1d2f5e);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(26, 58, 138, 0.4);
+}
+
+.mensaje-bubble {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    left: 70%;
+    transform: translateX(-50%);
+    background: rgba(255, 105, 180, 0.9);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    z-index: 100;
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.mensaje-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: rgba(255, 105, 180, 0.9) transparent transparent;
+}
+
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 20px;
+    margin: 0 auto;
+    z-index: 10;
+    position: relative;
+}
+
+.container-wrapper-2 {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    z-index: 10;
+    position: relative;
+}
+
+.container {
+    background-color: #001696;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    width: 220px;
+    height: 220px;
+    padding: 28px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.container-1 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13.jpeg');
+    transform: rotate(270deg);
+}
+
+.container-2 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13 (1).jpeg');
+    transform: rotate(360deg);
+}
+
+.container-3 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13 (2).jpeg');
+    transform: rotate(270deg);
+}
+
+.container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+    background-color: #0028CC;
+}
+
+.container-4 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13 (3).jpeg');
+    transform: rotate(360deg);
+}
+
+.container-5 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13 (4).jpeg');
+    transform: rotate(270deg);
+}
+
+.container-6 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.07.21.jpeg');
+    transform: rotate(360deg);
+}
+
+.touch-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.container:hover .touch-label {
+    opacity: 1;
+    bottom: 30px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .seccion2 h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+    
+    .seccion2 p {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    
+    .btn-seccion {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}
+/* ========================================
+   ESTILOS GENERALES
+   ======================================== */
+
+/* Fondo negro base de la página */
+body {
+    background-color: #000000;
+    background-image: none;
+    min-height: 100vh;
+    transition: filter 0.5s ease;
+}
+
+/* Degradado superior: crea efecto visual desde arriba */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45vh;
+    background: linear-gradient(to bottom, rgba(1, 14, 48, 0.4) 0%, rgba(0, 10, 36, 0.2) 40%, transparent 80%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Degradado inferior: crea efecto visual desde abajo */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(to top, rgba(1, 14, 48, 0.4) 0%, rgba(0, 10, 36, 0.2) 20%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ========================================
+    SECCIÓN PRINCIPAL
+   ======================================== */
+
+/* Contenedor principal de la segunda página */
+.seccion2 {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 10;
+}
+
+/* Título de la sección */
+.seccion2 h1 {
+    color: #ffffff;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 5px auto 5px;
+    position: relative;
+    z-index: 10;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out;
+    text-align: center;
+}
+
+/* Línea decorativa debajo del título */
+.seccion2 h1::after {
+    content: '';
+    display: block;
+    width: 200px;
+    margin: 10px auto 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Párrafo introductorio */
+.seccion2 p {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 600px;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* ========================================
+    TÍTULOS Y MENSAJES
+   ======================================== */
+
+/* Título de sección secundario */
+.titulo-seccion {
+    color: #ffffff;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 30px auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+/* Mensaje de amor en rosa */
+.texto-amor {
+    color: #ff69b4;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 40px auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Animación de entrada fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+    BOTONES DE NAVEGACIÓN
+   ======================================== */
+
+/* Estilos base de los botones */
+.btn-seccion {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(135deg, rgba(26, 58, 138, 0.7), rgba(13, 31, 78, 0.7));
+    color: white;
+    text-decoration: none;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 14px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Botón Volver posicionado a la izquierda */
+.btn-volver {
+    position: fixed;
+    bottom: 40px;
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+/* Botón Siguiente posicionado a la derecha */
+.btn-siguiente {
+    position: fixed;
+    bottom: 40px;
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+/* Efecto hover en los botones */
+.btn-seccion:hover {
+    background: linear-gradient(135deg, #2a4aaa, #1d2f5e);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(26, 58, 138, 0.4);
+}
+
+/* Bubble de mensaje temporal */
+.mensaje-bubble {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    left: 70%;
+    transform: translateX(-50%);
+    background: rgba(255, 105, 180, 0.9);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    z-index: 100;
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Flecha del bubble */
+.mensaje-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: rgba(255, 105, 180, 0.9) transparent transparent;
+}
+
+/* ========================================
+   CONTENEDORES DE IMÁGENES
+   ======================================== */
+
+/* Primer grupo de contenedores (1-3) */
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 20px;
+    margin: 0 auto;
+    z-index: 10;
+    position: relative;
+}
+
+/* Segundo grupo de contenedores (4-6) */
+.container-wrapper-2 {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    z-index: 10;
+    position: relative;
+}
+
+/* Estilos base de los contenedores */
+.container {
+    background-color: #001696;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+    width: 200px;
+    height: 200px;
+    padding: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Imágenes de fondo para cada contenedor */
+.container-1 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13.jpeg');
+    transform: rotate(270deg);
+}
+
+.container-2 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13 (1).jpeg');
+    transform: rotate(360deg);
+}
+
+.container-3 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13 (2).jpeg');
+    transform: rotate(270deg);
+}
+
+.container-4 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13 (3).jpeg');
+    transform: rotate(360deg);
+}
+
+.container-5 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.05.13 (4).jpeg');
+    transform: rotate(270deg);
+}
+
+.container-6 {
+    background-image: url('WhatsApp Image 2026-04-25 at 08.07.21.jpeg');
+    transform: rotate(360deg);
+}
+
+/* Efecto hover: aumenta tamaño y sombra */
+.container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+    background-color: #0028CC;
+}
+
+/* Etiqueta "Abreme" que aparece al hacer hover */
+.touch-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Mostrar etiqueta al hacer hover */
+.container:hover .touch-label {
+    opacity: 1;
+    bottom: 30px;
+}
+
+/* ========================================
+   MODAL (VENTANA EMERGENTE)
+   ======================================== */
+
+/* Contenedor principal del modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal visible */
+.modal.show {
+    display: flex;
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+}
+
+/* Botón X para cerrar */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Efecto hover en el botón de cerrar */
+.close:hover {
+    color: #ccc;
+}
+
+/* ========================================
+   DISEÑO RESPONSIVO
+   ======================================== */
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .seccion2 h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+    
+    .seccion2 p {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    
+    .btn-seccion {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}
